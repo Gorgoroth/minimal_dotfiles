@@ -1,0 +1,10 @@
+#!/bin/bash
+grep -q closed /proc/acpi/button/lid/LID/state
+if [ $? = 0 ]
+then
+  # Suspend and lock screen
+  pm-suspend-hybrid
+  sudo -u vk -H i3lock -i /home/vk/.config/i3/i3lock_back.png  -t -n
+# else
+  # Do nothing for now
+fi
