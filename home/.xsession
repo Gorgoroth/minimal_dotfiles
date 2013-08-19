@@ -26,22 +26,27 @@ xset -dpms
 xset s off
 xset s noblank
 
-# TODO Due to a bug, grp:toggle is not read from /etc/defaults/keyboars, so toggle keyboard layouts here
+# TODO Due to a bug, grp:toggle is not read from /etc/defaults/keyboards, so toggle keyboard layouts here
 setxkbmap -option "grp:alt_shift_toggle" -layout "us,de"
 
 # Enforce correct locales from the beginning
+LANG=de_DE.UTF-8
+export LANG
+
 unset LC_COLLATE
-export LC_CTYPE=de_DE.UTF-8
-export LC_TIME=de_DE.UTF-8
-export LC_NUMERIC=de_DE.UTF-8
-export LC_MONETARY=de_DE.UTF-8
+export LC_ALL=$LANG
+export LC_CTYPE=$LANG
+export LC_TIME=$LANG
+export LC_NUMERIC=$LANG
+export LC_MONETARY=$LANG
 export LC_MESSAGES=C
-export LC_PAPER=de_DE.UTF-8
-export LC_NAME=de_DE.UTF-8
-export LC_ADDRESS=de_DE.UTF-8
-export LC_TELEPHONE=de_DE.UTF-8
-export LC_MEASUREMENT=de_DE.UTF-8
-export LC_IDENTIFICATION=de_DE.UTF-8
+export LC_PAPER=$LANG
+export LC_NAME=$LANG
+export LC_ADDRESS=$LANG
+export LC_TELEPHONE=$LANG
+export LC_MEASUREMENT=$LANG
+export LC_IDENTIFICATION=$LANG
+export LC_LANG="en_US.UTF-8"
 
 # OSD
 # dunst &
