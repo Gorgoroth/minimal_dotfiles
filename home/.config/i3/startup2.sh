@@ -64,6 +64,7 @@ i3-msg workspace 2
 $BROWSER &
 wait_for_program
 
+i3-msg move workspace output DVI-D-1
 
 # --- System console and monitoring ------------------------------------------
 # Third screen, tertiary monitor or primary
@@ -76,17 +77,20 @@ wait_for_program
 # |          |          |
 # |          |  iptraf  |
 # |__________|__________|
+
 i3-msg workspace 3
 $TERM &
 wait_for_program
+
 i3-msg split h
 $TERM -e "$SYSMON;bash" &
 wait_for_program
+
 i3-msg split v
 $TERM -e "sudo $NETMON;bash" &
 wait_for_program
 
-# i3-msg move workspace 3 output LVDS-1
+i3-msg move workspace output LVDS-1
 
 # Second screen, secondary monitor
 #
@@ -103,7 +107,7 @@ i3-msg workspace 4
 $TERM &
 wait_for_program
 
-# i3-msg move workspace 4 output DVI-D-1
+i3-msg move workspace output DVI-D-1
 
 # --- Remote sessions ---------------------------------------------------------
 # Fourth screen, secondary monitor, or primary
@@ -133,6 +137,8 @@ wait_for_program
 i3-msg split v
 $TERM &
 wait_for_program
+
+i3-msg move workspace output LVDS-1
 
 # Focus the browser
 workspace 2
