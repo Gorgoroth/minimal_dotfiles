@@ -6,8 +6,8 @@
 #
 ###########################################################################
 
-# TERM="urxvt"
-TERM="xterm"
+TERM="urxvt"
+# TERM="xterm"
 VIM="vim"
 BROWSER="google-chrome"
 SYSMON="htop"
